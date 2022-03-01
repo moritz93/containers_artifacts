@@ -11,7 +11,7 @@ services:
       SQL_SERVER: db
       ASPNETCORE_ENVIRONMENT: Local
       SQL_USER: sa
-      SQL_PASSWORD:  Password123!
+      SQL_PASSWORD:  #Obfuscated
 
   db:
     image: mcr.microsoft.com/mssql/server:2017-latest
@@ -19,7 +19,7 @@ services:
     ports:
       - "1433:1433"
     environment:
-      SA_PASSWORD: Password123!
+      SA_PASSWORD: #Obfuscated
       ACCEPT_EULA: "Y"
 networks:
   default:
