@@ -1,0 +1,27 @@
+version: "3.3"
+services:
+  poi:
+    container_name: poi
+    image: poi:latest
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    environment:
+      SQL_SERVER: db
+      ASPNETCORE_ENVIRONMENT: Local
+      SQL_USER: sa
+      SQL_PASSWORD:  Password123!
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    container_name: db
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: Password123!
+      ACCEPT_EULA: "Y"
+networks:
+  default:
+    external:
+      name: mynetwork
