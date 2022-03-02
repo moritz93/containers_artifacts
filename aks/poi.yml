@@ -3,6 +3,7 @@
  kind: Deployment
  metadata:
    name: poi
+   namespace: apidev
    labels:
     app: poi
  spec:

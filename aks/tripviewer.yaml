@@ -3,6 +3,7 @@
  kind: Deployment
  metadata:
    name: tripviewer
+   namespace: webdev
    labels:
     app: tripviewer
  spec:
@@ -22,6 +23,6 @@
           - containerPort: 80
         env: 
         - name: TRIPS_API_ENDPOINT
-          value: http://trip-service
+          value: http://trips-service
         - name: USERPROFILE_API_ENDPOINT
           value: http://userprofile-service

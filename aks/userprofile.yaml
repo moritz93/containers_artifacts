@@ -3,6 +3,7 @@
  kind: Deployment
  metadata:
    name: userprofile
+   namespace: apidev
    labels:
     app: userprofile
  spec:
