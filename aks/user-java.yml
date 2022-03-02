@@ -3,6 +3,7 @@
  kind: Deployment
  metadata:
    name: user-java
+   namespace: apidev
    labels:
     app: user-java
  spec:
