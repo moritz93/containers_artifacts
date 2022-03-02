@@ -1,26 +1,26 @@
+# kind: RoleBinding
+# apiVersion: rbac.authorization.k8s.io/v1
+# metadata:
+#   name: webdev-access
+#   namespace: webdev
+# roleRef:
+#   apiGroup: rbac.authorization.k8s.io
+#   kind: Role
+#   name: webdev-role
+# subjects:
+# - kind: User
+#   namespace: webdev
+#   name: 930021c0-2c5c-47fc-bcfd-ff02eae95552
+# ---
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: webdev-access
-  namespace: webdev
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: Role
-  name: webdev-role
-subjects:
-- kind: User
-  namespace: webdev
-  name: 930021c0-2c5c-47fc-bcfd-ff02eae95552
----
-kind: RoleBinding
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  name: webdev-view
+  name: webdev-edit
   namespace: webdev
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: view
+  name: edit
 subjects:
 - kind: User
   namespace: webdev
