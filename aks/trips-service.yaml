@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: trips-service
+  namespace: apidev
 spec:
   selector:
     app: trips

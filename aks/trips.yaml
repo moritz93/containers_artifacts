@@ -3,6 +3,7 @@
  kind: Deployment
  metadata:
    name: trips
+   namespace: apidev
    labels:
     app: trips
  spec:

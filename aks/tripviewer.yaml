@@ -3,6 +3,7 @@
  kind: Deployment
  metadata:
    name: tripviewer
+   namespace: webdev
    labels:
     app: tripviewer
  spec:
