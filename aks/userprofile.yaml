@@ -25,12 +25,12 @@
         - name: SQL_USER
           valueFrom: 
             secretKeyRef:
-              name: sqladmin
+              name: sqlsecret
               key: SQL_USER
         - name: SQL_PASSWORD
           valueFrom: 
             secretKeyRef:
-              name: sqlpassword
+              name: sqlsecret
               key: SQL_PASSWORD
         - name: SQL_SERVER
           value: sqlserverrqe0350.database.windows.net
