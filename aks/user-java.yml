@@ -1,0 +1,37 @@
+---
+ apiVersion: apps/v1
+ kind: Deployment
+ metadata:
+   name: user-java
+   labels:
+    app: user-java
+ spec:
+   replicas: 3
+   selector:
+    matchLabels:
+      app: user-java
+   template:
+    metadata:
+      labels:
+        app: user-java
+    spec:
+      containers:
+      - name: user-java
+        image: openhackteam4.azurecr.io/tripinsights/user-java:latest
+        ports:
+          - containerPort: 80
+        env: 
+        - name: SQL_USER
+          valueFrom: 
+            secretKeyRef:
+              name: sqladmin
+              key: SQL_USER
+        - name: SQL_PASSWORD
+          valueFrom: 
+            secretKeyRef:
+              name: sqlpassword
+              key: SQL_PASSWORD
+        - name: SQL_SERVER
+          value: sqlserverrqe0350.database.windows.net
+        - name: SQL_DB_NAME
+          value: mydrivingDB
