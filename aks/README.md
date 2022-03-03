@@ -39,3 +39,6 @@ az keyvault set-policy -n <keyvault-name> --secret-permissions get --spn <identi
 # set policy to access certs in your key vault
 az keyvault set-policy -n <keyvault-name> --certificate-permissions get --spn <identity-client-id>
 ```
+
+## Attach ACR to the cluster
+az aks update -n aksteam4 -g teamResources --attach-acr registryrqe0350
