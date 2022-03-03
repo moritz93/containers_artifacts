@@ -1,28 +1,13 @@
-
-# kind: RoleBinding
-# apiVersion: rbac.authorization.k8s.io/v1
-# metadata:
-#   name: apidev-access
-#   namespace: apidev
-# roleRef:
-#   apiGroup: rbac.authorization.k8s.io
-#   kind: Role
-#   name: apidev-role
-# subjects:
-# - kind: User
-#   namespace: apidev
-#   name: b1a3efab-faeb-479b-8797-9b182f0522e7
-# ---
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: apidev-edit
   namespace: apidev
 roleRef:
-  apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
   name: edit
+  apiGroup: rbac.authorization.k8s.io
 subjects:
 - kind: User
-  namespace: apidev
-  name: b1a3efab-faeb-479b-8797-9b182f0522e7
+  name: "b1a3efab-faeb-479b-8797-9b182f0522e7"
+  apiGroup: rbac.authorization.k8s.io
