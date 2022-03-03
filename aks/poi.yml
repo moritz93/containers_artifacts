@@ -21,20 +21,21 @@
         image: openhackteam4.azurecr.io/tripinsights/poi:latest
         ports:
           - containerPort: 80
-        env: 
-        - name: SQL_USER
-          valueFrom: 
-            secretKeyRef:
-              name: sqlsecret
-              key: SQL_USER
-        - name: SQL_PASSWORD
-          valueFrom: 
-            secretKeyRef:
-              name: sqlsecret
-              key: SQL_PASSWORD
+        env:
         - name: SQL_SERVER
           value: sqlserverrqe0350.database.windows.net
         - name: SQL_DB_NAME
           value: mydrivingDB
         - name: ASPNETCORE_ENVIRONMENT
           value: Production
+        volumeMounts:
+        - name: secrets-store01-inline
+          mountPath: "/mnt/secrets-store"
+          readOnly: true
+      volumes:
+      - name: secrets-store01-inline
+        csi:
+          driver: secrets-store.csi.k8s.io
+          readOnly: true
+          volumeAttributes:
+            secretProviderClass: azure-kvname-user-msi
