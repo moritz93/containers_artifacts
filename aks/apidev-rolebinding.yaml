@@ -8,6 +8,6 @@ roleRef:
   name: edit
   apiGroup: rbac.authorization.k8s.io
 subjects:
-- kind: User
-  name: "b1a3efab-faeb-479b-8797-9b182f0522e7"
+- kind: Group
+  name: "d433c65b-7751-4186-8b86-0d368347c195"
   apiGroup: rbac.authorization.k8s.io
