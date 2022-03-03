@@ -27,7 +27,7 @@
         - name: SQL_DB_NAME
           value: mydrivingDB
         - name: ASPNETCORE_ENVIRONMENT
-          value: Production
+          value: Development
         volumeMounts:
         - name: secrets-store01-inline
           mountPath: "/secrets"
